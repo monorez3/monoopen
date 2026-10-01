@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "monoopen"
+version = "0.2.0"
+description = "HTTP-клиент на голых сокетах, без сторонних зависимостей"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "vlad" }]
+keywords = ["http", "client", "sockets", "tls", "scraping"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Internet :: WWW/HTTP",
+    "Intended Audience :: Developers",
+]
+
+[project.optional-dependencies]
+br = ["brotli"]
+zstd = ["zstandard"]
+all = ["brotli", "zstandard"]
+
+[project.urls]
+Repository = "https://github.com/monorez3/monoopen"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["monoopen*"]
